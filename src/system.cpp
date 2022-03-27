@@ -29,7 +29,7 @@ for(auto i =pids.begin(); i<pids.end();i++){
     return processes_; }
 
 // TODO: Return the system's kernel identifier (string)
-std::string System::Kernel() { return string(); }
+std::string System::Kernel() { return LinuxParser::Kernel(); }
 
 // TODO: Return the system's memory utilization
 float System::MemoryUtilization() { return 0.0; }
