@@ -4,6 +4,8 @@
 #include <string>
 
 namespace Format {
+    std::string AppendZero(long times);  // TODO: See src/format.cpp
+
 std::string ElapsedTime(long times);  // TODO: See src/format.cpp
 };                                    // namespace Format
 
