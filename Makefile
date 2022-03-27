@@ -10,7 +10,8 @@ build:
 	mkdir -p build
 	cd build && \
 	cmake .. && \
-	make
+	make && \
+	./monitor
 
 .PHONY: debug
 debug:
