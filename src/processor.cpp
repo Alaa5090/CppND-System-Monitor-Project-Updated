@@ -16,3 +16,9 @@ float Processor::Utilization() {
         delta_jiffies_[i]=first_cpu_jiffies[i]-second_cpu_jiffies[i];
      }
  }
+ void Processor::GetLinuxParserForJiffies(std::array<long,3>& cpu_jiffies)
+{
+    cpu_jiffies[LinuxParser::CPUTime::kIdleTime_]=LinuxParser::IdleJiffies();
+    cpu_jiffies[LinuxParser::CPUTime::kActiveTime_]=LinuxParser::ActiveJiffies();
+    cpu_jiffies[LinuxParser::CPUTime::kTotalTime_]=LinuxParser::Jiffies();   
+}
