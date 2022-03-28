@@ -40,6 +40,28 @@ enum CPUStates {
   kGuest_,
   kGuestNice_
 };
+
+//Adding memory types enum
+
+enum MemTypes
+{
+  kMemTotal_=0,
+  kMemFree_,
+  KMemAvailable_,
+  KMemBuffer_,
+  KMemCached_
+};
+/*
+enum MemoryType {
+  kMemTotal_ = 0,
+  kMemFree_,
+  kMemAvailable_,
+  kMemBuffer_,
+  kMemCached_
+};
+*/
+enum CPUTime { kIdleTime_ = 0, kActiveTime_, kTotalTime_ };
+
 std::vector<std::string> CpuUtilization();
 long Jiffies();
 long ActiveJiffies();
@@ -48,7 +70,8 @@ long IdleJiffies();
 
 // Processes
 std::string Command(int pid);
-std::string Ram(int pid);
+//std::string Ram(int pid);
+float Ram(int pid);
 std::string Uid(int pid);
 std::string User(int pid);
 long int UpTime(int pid);
