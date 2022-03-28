@@ -30,3 +30,7 @@ float Processor::CalculateUtilization() {
       (delta_jiffies_[LinuxParser::CPUTime::kTotalTime_] + small_number_buffer);
   return utilization;
 }
+long Processor::getTotalJiffies()
+{
+    return current_cpu_jiffies_[LinuxParser::CPUTime::kTotalTime_];
+}
