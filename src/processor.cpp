@@ -7,7 +7,12 @@ Processor::Processor()
 }
 
 float Processor::Utilization() { 
-    return 0.0; }
+   GetLinuxParserForJiffies(prev_cpu_jiffies_);
+    CalculateDeltaTime(current_cpu_jiffies_,prev_cpu_jiffies_);
+    const float utilization = CalculateUtilization();
+    current_cpu_jiffies_.swap(prev_cpu_jiffies_);
+    return utilization;
+}
 
     void Processor::CalculateDeltaTime(std::array<long,3>&first_cpu_jiffies,std::array<long,3>&second_cpu_jiffies)
  {
